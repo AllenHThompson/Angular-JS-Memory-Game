@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="utf-8">
+     <title>Angular Memory Game</title>
+     <script src="angular.js"></script>
+     <script src="memory_game.js"></script>
+
+     <link rel="stylesheet" href="memory_game.css" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+     <div ng-app="memoryGame" ng-controller="memoryGameController">
+
+          <div class="tiles">
+               <div ng-model="message">
+                    <label>{{message}}</label>
+               </div>
+
+          <button class="monster-pics" ng-click="openTile(monster)" ng-repeat="monster in monsters">
+               <img ng-show="monster.state === 'open'" ng-src="images/{{monster.image}}"></img>
+          </button>
+
+
+          </div>
+
+     </div>
+
+</body>
+</html>
