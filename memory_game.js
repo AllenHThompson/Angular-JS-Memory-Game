@@ -1,10 +1,30 @@
 var app = angular.module('memoryGame', []);
-var monsters;
+
 app.controller('memoryGameController', function($scope, $timeout){
      var clickOne;
      var clickTwo;
      var turn = "first";
-     monsters = $scope.monsters = [
+
+     $scope.shuffle = function() {
+          $scope.monsters = shuffle($scope.monsters);
+     }
+
+     function shuffle(arr) {
+          console.log('you shuffled');
+          arr = arr.slice(0);
+          var newArr = [];
+          while (arr.length > 0) {
+               var indx = Math.floor(Math.random() * arr.length);
+               var item = arr[indx];
+               newArr.push(item);
+               arr.splice(indx, 1);
+          }
+          return newArr;
+     }
+
+
+
+     $scope.monsters = [
           {image: 'monsters-01.png', state: "closed", match: false},
           {image: 'monsters-02.png', state: "closed", match: false},
           {image: 'monsters-03.png', state: "closed", match: false},
