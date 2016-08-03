@@ -47,6 +47,8 @@ app.controller('memoryGameController', function($scope, $timeout){
           // {image: 'monsters-16.png', state: "closed", match: false},
      ];
 
+     // $scope.shuffle();
+
      $scope.openTile = function(monster) {
           if (monster.state === "open"){
                return;
